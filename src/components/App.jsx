@@ -9,7 +9,20 @@ export class App extends Component {
     filter: '',
   };
 
-  // nnn
+  componentDidMount() {
+    const stringafiendContacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(stringafiendContacts) ?? [];
+
+    this.setState({ contacts: parsedContacts });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.contacts !== this.state.contacts) {
+      const stringafiendContacts = JSON.stringify(this.state.contacts);
+      localStorage.setItem('contacts', stringafiendContacts);
+      console.log('ffff');
+    }
+  }
 
   conactList = contactData => {
     const { contacts } = this.state;
