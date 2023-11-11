@@ -9,6 +9,8 @@ export class App extends Component {
     filter: '',
   };
 
+  // nnn
+
   conactList = contactData => {
     const { contacts } = this.state;
     if (
