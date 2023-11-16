@@ -20,7 +20,6 @@ export class App extends Component {
     if (prevState.contacts !== this.state.contacts) {
       const stringafiendContacts = JSON.stringify(this.state.contacts);
       localStorage.setItem('contacts', stringafiendContacts);
-      console.log('ffff');
     }
   }
 
